@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains oem_extended_image.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oem_extended_image_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oem_extended_image module.
+    case 'help.page.oem_extended_image':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creates an extension of the image field, with an additional field for a description of the image.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oem_extended_image_theme() {
+    
+    return [
+        // Theme functions in extended_image.field.inc
+        'extended_image' => [
+            'variables' => ['item' => NULL, 'item_attributes' => NULL, 'url' => NULL, 'image_style' => NULL],
+            'file' => 'extended_image.field.inc',
+        ],
+    ];
+
+}

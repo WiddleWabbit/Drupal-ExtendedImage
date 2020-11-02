@@ -1,0 +1,8 @@
+name: 'OEM Extended Image'
+type: module
+description: 'Creates an extension of the image field, with an additional field for a description of the image.'
+core: 8.x
+dependencies:
+  - image
+  - field
+  - field_ui
